@@ -4,7 +4,8 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register"
+		"test": "mocha --no-timeouts --reporter mochawesome --require mochawesome/register",
+		"parallel": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register"
 	},
 	"author": "",
 	"license": "ISC",

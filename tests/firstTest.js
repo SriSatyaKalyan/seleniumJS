@@ -1,15 +1,19 @@
-const { Builder } = require("selenium-webdriver")
+const { Builder, By, Key } = require("selenium-webdriver");
 
-async function example(){
-    //launch the browser
-    let driver = await new Builder().forBrowser("chrome").build();
+async function example() {
+	//launch the browser
+	let driver = await new Builder().forBrowser("chrome").build();
 
-    //navigate to application
-    await driver.get("https://lambdatest.github.io/sample-todo-app/")
+	//navigate to application
+	await driver.get("https://lambdatest.github.io/sample-todo-app/");
 
-    //add a todo
+	//add a todo
+	await driver
+		.findElement(By.id("sampletodotext"))
+		.sendKeys("Learn Selenium with JS", Key.RETURN);
 
-    //close the browser
+	//close the browser
+	await driver.quit();
 }
 
-example()
+example();
